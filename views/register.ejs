@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+    <style>
+        html,body{
+            background-image: url('data:image/jpeg;base64,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');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body>
+    <%- include('navbar') %>
+<br>
+<br>
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-md-6">
+<div class="card">
+<header class="card-header">
+	<a href="login" class="float-right btn btn-outline-primary mt-1">Log in</a>
+	<h4 class="card-title mt-2">Sign up</h4>
+</header>
+<article class="card-body">
+<form action="/register" enctype="multipart/form-data" method="POST">
+    <div class="form-group">
+            <label for="img">Display Picture:</label>
+            <input type="file" id="dp" name="img" accept="image/*">
+        </div>
+	<div class="form-row">
+		<div class="col form-group">
+			<label>First name </label>   
+		  	<input type="text" class="form-control" placeholder="" id="fName" name="fName">
+		</div> <!-- form-group end.// -->
+		<div class="col form-group">
+			<label>Last name</label>
+		  	<input type="text" class="form-control" placeholder=" " id="lName" name="lName">
+		</div> <!-- form-group end.// -->
+	</div> <!-- form-row end.// -->
+    <div class="form-group">
+		<label>Email address</label>
+		<input type="email" class="form-control" placeholder="" id="mail" name="mail">
+		<small class="form-text text-muted">We'll never share your email with anyone else.</small>
+	</div> <!-- form-group end.// -->
+	<div class="form-group">
+		<label>Contact Number</label>
+		<input type="text" class="form-control" placeholder="" id="phno" name="phno">
+		<small class="form-text text-muted">We'll never share your Contact Number with anyone else.</small>
+	</div> <!-- form-group end.// -->
+	<div class="form-group">
+			<label class="form-check form-check-inline">
+		  <input class="form-check-input" type="radio" value="male" id="male" name="gender">
+		  <span class="form-check-label"> Male </span>
+		</label>
+		<label class="form-check form-check-inline">
+		  <input class="form-check-input" type="radio" value="female" id="female" name="gender">
+		  <span class="form-check-label"> Female</span>
+		</label>
+	</div> <!-- form-group end.// -->
+	<div class="form-row">
+		<div class="form-group col-md-6">
+		  <label>City</label>
+		  <input type="text" class="form-control" id="city" name="city">
+		</div> <!-- form-group end.// -->
+		<div class="form-group col-md-6">
+		  <label>Country</label>
+		  <select id="country" class="form-control" name="country">
+		    <option> Choose...</option>
+		      <option selected="">United States</option>
+		      <option>India</option>
+		      <option>United Kingdom</option>
+		      <option>Russia</option>
+		  </select>
+		</div> <!-- form-group end.// -->
+	</div> <!-- form-row.// -->
+	
+	<div class="form-row">
+		<div class="form-group col-md-6">
+		  <label>Course</label>
+		  <select id="course" class="form-control" name="course">
+		    <option> Choose a Course</option>
+		      <option selected="">Software Development</option>
+		      <!-- <option>Data Analytics</option>
+		      <option>Artificial Intelligence</option>
+		      <option>Project Management</option> -->
+		  </select>
+		</div> <!-- form-group end.// -->
+	</div> <!-- form-row.// -->
+	
+	<div class="form-group">
+		<label>Create password</label>
+	    <input class="form-control" type="password" id="fPass" name="fPass">
+	</div> <!-- form-group end.// -->
+    <div class="form-group">
+		<label>Confirm password</label>
+	    <input class="form-control" type="password" id="Spass" name="sPass">
+	</div> <!-- form-group end.// -->  
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-block" id="submit" name="register"> Register  </button>
+    </div> <!-- form-group// -->      
+    <small class="text-muted">By clicking the 'Sign Up' button, you confirm that you accept our <br> Terms of use and Privacy Policy.</small>                                          
+</form>
+</article> <!-- card-body end .// -->
+<div class="border-top card-body text-center">Have an account? <a href="login">Log In</a></div>
+</div> <!-- card.// -->
+</div> <!-- col.//-->
+
+</div> <!-- row.//-->
+
+
+</div> 
+<!--container end.//-->
+
+<br><br>
+
+<script>
+
+	
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Page</title>
+</head>
+<body>
+    <%if(details.course == "Project Management") { %>
+        <h1> <%= details.course %> Internship </h1>
+    <% } else if(details.course == "Artificial Intelligence") { %>
+        <h1> <%= details.course %> Internship </h1>
+    <% } else if(details.course == "Data Analytics") { %>
+        <h1> <%= details.course %> Internship </h1>
+    <% } else if(details.course == "Software Development") { %>
+        <%- include('sd') %>
+    <% } %>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <style>
+
+/* #09000b: #09000b;
+"Nunito", sans-serif: "Nunito", sans-serif;
+#0a0a0a: #0a0a0a; */
+
+body {
+  /* background-color: #09000b; */
+  font-family: "Nunito", sans-serif;
+}
+
+.container {
+  padding: 50px 0;
+}
+
+.profile {
+  width: 500px;
+  margin: 0 auto;
+  background-color:rgba(31,131,84,255);
+  padding: 30px;
+  border-radius: 30px;
+  position: relative;
+}
+  h3 {
+    background-color: white;
+    padding: 5px 5px;
+  }
+  
+  p {
+    color: white;
+    padding: -2px -2px;
+  }
+  
+  .image {
+    width: 89px;
+    height: 89px;
+    /* background: red; */
+    border-radius: 30%;
+    margin: 0 auto;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    transform-origin: bottom left;
+    box-shadow: 0 3px 15px rgba(#0a0a0a, 0.1);
+    transition: all 0.3s ease-in-out;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  
+  .image:hover {
+      transform: scale(1.5);
+      border-radius: 10px;
+  }
+    </style>
+
+</head>
+<body>
+    <%- include('navbar') %>
+    <div class="container">
+        <div class="profile">
+          <div class="image"></div>
+          <img class="image" src="data:image/<%= details.dp.contentType %>;base64,<%= details.dp.data.toString('base64') %>" alt="DP">
+          <h3><%= details.firstname %> <%= details.lastname %></h3>
+          <p>Address: <%= details.city %>, <%= details.country %></p>
+          <p>Email: <%= details.email %></p>
+          <p>Contact No. :<%= details.phone %></p>
+          <p></p>
+        </div>
+    </div>
+    <ul style="border-radius: 30%;">
+      <h2 style="text-align: center; color:rgba(31,131,84,255);width: 100%; ">Courses</h2>
+    </ul>
+    <div class="container" >
+      <div class="profile" style="width: 300px;">
+        <p style="text-align: center;"> <%=details.course %></p>
+        <button style="margin: 0% 35%;"> <a href="mycourse"> Explore </a></button>
+      </div>
+</body>
+</html>

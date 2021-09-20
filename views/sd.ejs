@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+/* body {
+  margin: 0;
+} */
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 25%;
+  background-color: #f1f1f1;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+li a.active {
+  background-color: rgba(31,131,84,255);
+  color: white;
+}
+
+li a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+/* .header {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  background-color: #f1f1f1;
+} */
+
+/* The progress container (grey background) */
+.progress-container {
+  width: 100%;
+  height: 8px;
+  background: #ccc;
+}
+
+/* The progress bar (scroll indicator) */
+.progress-bar {
+  height: 8px;
+  background: #04AA6D;
+  width: 0%;
+}
+</style>
+</head>
+<body>
+<div>
+    <ul style="text-align: center;">
+
+      <div>
+         <li style="text-align: left;"><a class="active" href=""><h1> <%= details.course %> Internship </h1></a></li>
+         <li style="background-color: black; "><a href="dashboard" style="color: white;">Return to Dashboard</a></li>
+         <div class="header">
+            <h2>Course Completion</h2>
+            <div class="progress-container">
+              <div class="progress-bar" id="myBar"></div>
+            </div>  
+          </div>
+          
+        </div>
+      <li style="text-decoration: underline; font-size: 20px; padding: 10px 10px;">Course Content</li>
+      <li><a href="#html">HTML and CSS</a></li>
+      <li><a href="#jscript">JavaScript</a></li>
+      <li><a href="#node">NodeJS</a></li>
+      <li><a href="#project">Project Work</a></li>
+    </ul>
+    
+    <div style="margin-left:25%;padding:1px 16px;height:1000px;">
+    <div id="html">
+        <h3>HyperText Markup Language and Cascading Style Sheets</h3>
+        <p></p>
+        <iframe width="100%" height="600" src="https://www.youtube.com/embed/D-h8L5hgW-w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div id="jscript">
+        <h3>JavaScript</h3>
+        <iframe width="100%" height="600" src="https://www.youtube.com/embed/hdI2bqOjy3c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div id="node">
+        <h3>NodeJS</h3>
+        <p>Node.js® is a JavaScript runtime built on Chrome’s V8 JavaScript engine. It uses an event driven, non-blocking I/O model that makes it lightweight and efficient.</p>
+<p>            Before Node, JavaScript just could not be used as a more general purpose programming language, it was limited to what the browser allowed it to do.
+                So, for example, I could use JavaScript to add a click event to this button or to redirect a user to a different page.
+</p>
+<p>
+    But there was no way to use the JavaScript programming language outside of the browser to build things like Web servers that could access the file system and connect to databases. All of these are things that other programming languages can do without any problem.
+</p>
+<p> 
+    All of this ended up changing with the introduction of Node JS
+</p>
+<p>JavaScript developers could now use JavaScript on the server side so they could use the same JavaScript programming language to create Web servers, command line interfaces, application back ends and more.</p>
+<p>
+This video will give you complete clarity & understanding of why NodeJS got into existence.
+</p>
+            <ol>
+                Your Tasks:
+                <li>Watch the Playlist attached below</li>
+                <li>Install & Setup Node in your computer (Instructions in the video)</li>
+            </ol>
+            </p>
+            <iframe width="100%" height="600" src="https://www.youtube.com/embed/zb3Qk8SG5Ms" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    </div>
+</div>
+</body>
+<script>
+window.onscroll = function() {myFunction()};
+
+function myFunction() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  document.getElementById("myBar").style.width = scrolled + "%";
+}
+</script>
+</html>
